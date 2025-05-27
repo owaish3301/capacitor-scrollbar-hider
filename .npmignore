@@ -1,0 +1,31 @@
+# Source files
+src/
+*.ts
+*.map
+
+# Build tools
+rollup.config.mjs
+tsconfig.json
+
+# Development dependencies
+node_modules/
+.git/
+.DS_Store
+
+# Documentation source
+CONTRIBUTING.md
+
+# Test files
+**/*.test.*
+**/*.spec.*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+*.log
+
+# GitHub files
+.github/
