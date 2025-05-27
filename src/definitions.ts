@@ -1,3 +1,6 @@
 export interface ScrollbarHiderPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  /**
+   * Hide scrollbars on the native WebView
+   */
+  hideScrollbars(): Promise<void>;
 }

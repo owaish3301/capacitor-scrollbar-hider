@@ -1,6 +1,6 @@
 {
   "name": "capacitor-scrollbar-hider",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Capacitor plugin to hide scrollbars in native WebViews for a cleaner, more native mobile experience.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -19,15 +19,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/owaish3301/capacitor-scrollbar-hider.git.git"
+    "url": "git+https://github.com/owaish3301/capacitor-scrollbar-hider.git"
   },
   "bugs": {
-    "url": "https://github.com/owaish3301/capacitor-scrollbar-hider.git/issues"
+    "url": "https://github.com/owaish3301/capacitor-scrollbar-hider/issues"
   },
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "scrollbar",
+    "hide",
+    "native",
+    "webview",
+    "mobile",
+    "ios",
+    "android"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",

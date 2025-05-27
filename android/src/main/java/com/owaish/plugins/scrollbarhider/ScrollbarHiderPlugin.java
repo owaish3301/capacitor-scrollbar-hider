@@ -1,6 +1,5 @@
 package com.owaish.plugins.scrollbarhider;
 
-import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -11,12 +10,15 @@ public class ScrollbarHiderPlugin extends Plugin {
 
     private ScrollbarHider implementation = new ScrollbarHider();
 
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    @Override
+    public void load() {
+        // Hide scrollbars when the plugin loads
+        implementation.hideScrollbars(getBridge().getWebView());
+    }
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+    @PluginMethod
+    public void hideScrollbars(PluginCall call) {
+        implementation.hideScrollbars(getBridge().getWebView());
+        call.resolve();
     }
 }

@@ -10,14 +10,21 @@ public class ScrollbarHiderPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "ScrollbarHiderPlugin"
     public let jsName = "ScrollbarHider"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "hideScrollbars", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = ScrollbarHider()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    public override func load() {
+        // Hide scrollbars when the plugin loads
+        if let webView = bridge?.webView {
+            implementation.hideScrollbars(webView: webView)
+        }
+    }
+
+    @objc func hideScrollbars(_ call: CAPPluginCall) {
+        if let webView = bridge?.webView {
+            implementation.hideScrollbars(webView: webView)
+        }
+        call.resolve()
     }
 }
